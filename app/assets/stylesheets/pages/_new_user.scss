@@ -1,0 +1,31 @@
+.banner {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+align-items: flex-start;
+  justify-content: center;
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.row {
+
+  height: 50vh;
+}
+
+.btn {
+  padding: 5px 10px;
+  background-color: #FF5D00;
+  border-radius: 6px;
+  color: white;
+}
+
+.form-control {
+    border-radius: 20px;
+    opacity: 0.7;
+}
+
+.col {
+  margin-top: 30px;
+}
