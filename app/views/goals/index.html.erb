@@ -1,0 +1,4 @@
+<h1>Goals</h1>
+<% @goals.each do |goal| %>
+	<h3><%= link_to goal.name, new_goal_cash_flow_path(goal) %></h3>
+	<% end %>
