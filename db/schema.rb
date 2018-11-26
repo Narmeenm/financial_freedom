@@ -10,10 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_145156) do
+ActiveRecord::Schema.define(version: 2018_11_25_164048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "budgets", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.index ["user_id"], name: "index_budgets_on_user_id"
+  end
+
+  create_table "cash_flows", force: :cascade do |t|
+    t.string "nature"
+    t.datetime "date"
+    t.bigint "user_id"
+    t.bigint "budget_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.index ["budget_id"], name: "index_cash_flows_on_budget_id"
+    t.index ["user_id"], name: "index_cash_flows_on_user_id"
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "image_goal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "goals_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "goal_id", null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.index ["goal_id"], name: "index_goals_users_on_goal_id"
+    t.index ["user_id"], name: "index_goals_users_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +61,15 @@ ActiveRecord::Schema.define(version: 2018_11_25_145156) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "avatar"
+    t.boolean "male", default: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "budgets", "users"
+  add_foreign_key "cash_flows", "budgets"
+  add_foreign_key "cash_flows", "users"
 end
