@@ -1,1 +1,15 @@
-yes
+<div class="container">
+	<div class="row">
+		<div class="col-xs-offset-3 col-xs-6">
+			<%= simple_form_for(@cash_flow, method: :post, url: budget_cash_flows_path) do |f| %>
+			  <%= f.input :income  %>
+			  <%= f.input :date  %>
+			  <%= f.input :price_cents %>
+			 
+		  <%= f.input :budget_id, collection: Budget.find(current_user.budget_ids)%>
+			  <%= f.submit %>
+			<% end %>
+			
+		</div>
+	</div>
+</div>
