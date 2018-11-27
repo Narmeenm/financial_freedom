@@ -1,3 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "goals", goals_path %>
+
+
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_path 'banner.jpg' %>);">
+  <div class="banner-content">
+    <h1>Welcome to</h1>
+    <p><%= link_to root_path, class: "logo" do %>
+           <%= image_tag "icon2.png", height: 100 %>
+            <% end %></p>
+    <a><%= link_to 'Sign up', new_user_registration_path, :class => "btn" %></a>
+    <a><%= link_to 'Sign in',  new_user_session_path, :class => "btn"%></a>
+  </div>
+</div>
