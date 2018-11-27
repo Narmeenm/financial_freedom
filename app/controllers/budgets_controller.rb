@@ -42,7 +42,7 @@ class BudgetsController < ApplicationController
 
  private
   def budget_params
-    params.require(:budget).permit(:name, :description, :amount_cents, :start_date ,:end_date )
+    params.require(:budget).permit(:name, :description, :amount_cents, :start_date ,:end_date ,:category_list)
   end
 
     def set_budget
