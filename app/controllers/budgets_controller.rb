@@ -35,7 +35,6 @@ class BudgetsController < ApplicationController
   def destroy       # DELETE /budgets/:id
   	
     @budget.destroy
-
     redirect_to budgets_path
   end
 
