@@ -21,7 +21,7 @@ class CashFlowsController < ApplicationController
   	@cash_flow.user = current_user
     @cash_flow.save
     if @cash_flow.save!
-    	redirect_to budget_cash_flows_path(@cash_flow)
+    	redirect_to budget_cash_flows_path(@cash_flow.budget)
     else 
     	render :new	
   	end
@@ -34,17 +34,18 @@ class CashFlowsController < ApplicationController
    def update        # PATCH /budgets/:id
   	@cash_flow = CashFlow.find(params[:id])
     @cash_flow.update(cashflow_params)
+    redirect_to budget_cash_flows_path(@cash_flow.budget)
   end
 
   def destroy
     @cash_flow.destroy
-    redirect_to budget_cash_flows_path
+    redirect_to budget_cash_flows_path(@cash_flow.budget)
   end	
 
 
  private
   def cashflow_params
-    params.require(:cash_flow).permit(:price_cents,:date,:budget_id ,:budget.category_list)
+    params.require(:cash_flow).permit(:price_cents,:date,:budget_id)
   end
 
     def set_cashflow
