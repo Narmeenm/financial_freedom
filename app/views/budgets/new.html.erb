@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col col-xs-12 budget-form">
 			<%= simple_form_for [@budget] do |f| %>
-      <%= f.input :amount_cents, label: 'How much do you want to spend?', error: 'This field is mandatory',  placeholder: 'Enter the amount'  %>
+        <%= f.input :amount_cents, label: 'How much do you want to spend?', error: 'This field is mandatory',  placeholder: 'Enter the amount'  %>
 			  <%= f.input :description, label: false, placeholder: 'Description'  %>
 			  <%= f.input :start_date, as: :string, label: 'Starting date', input_html: { id: "range_start" }  %>
 			  <%= f.input :end_date, as: :string, label: 'Ending date', input_html: { id: "range_end" }  %>
