@@ -1,0 +1,5 @@
+<h1><%= @budget.name %></h1>
+<h1><%= @budget.amount_cents.to_i / 100 %>NIS</h1>
+<% current_user.cash_flow_ids.each do |cf| %>
+<h2><%= CashFlow.find(cf).nature %></h2>
+<% end %>
