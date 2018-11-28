@@ -18,9 +18,9 @@ require 'time'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying all the seeds"
-User.destroy_all
-Budget.destroy_all
 CashFlow.destroy_all
+Budget.destroy_all
+User.destroy_all
 Goal.destroy_all
 
 # User Seeds
@@ -50,7 +50,7 @@ user_attributes = [
   }
 ]
 
-puts "creating beautiful Ben users...."
+puts "creating goal conquering users...."
 ## generate user seeds for all user seed info
 User.create!(user_attributes)
 zaneta = User.find_by(first_name: "Zaneta")
@@ -59,265 +59,107 @@ cory = User.find_by(first_name: "Cory")
 
 
 # Budget Seeds
-
+categories = ["Food & Drink","Bills & Fees", "Car", "Education", "Transport", "Clothes", "Home", "Entertainment","Healthcare"]
 ## set budget seed info
 budget_attributes = [
   {
-    name: "Cat Expenses",
-    description: "Meow mix, kitty litter, this shit stinks!",
+    category_list: categories.sample,
     user: zaneta,
-    amounts_cents: default: 0, null: false
+    amount: 500
   },
-    {
-    name: "Dog Expenses",
-    description: "Meow mix, kitty litter, this shit stinks!",
-    user: zaneta
-    amounts_cents: default: 0, null: false
-  }
   {
-    name: "House Expenses",
-    description: "cat mix, this shit stinks!",
-    user: zaneta
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 750
+  },
   {
-    name: "Car Expenses",
-    description: "cat mix, this shit stinks!",
-    user: zaneta
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
   {
-    name: "Travel Expenses",
-    description: "cat mix, this shit stinks!",
-    user: zaneta
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
   {
-    name: "Healthcare Expenses",
-    description: "Dog food, this shit stinks!",
-    user: cory
-    amounts_cents: default: 0, null: false
-  }
-    name: "Emergency Expenses",
-    description: "Dog food, this shit stinks!",
-    user: cory
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
   {
-    name: "Kids Expenses",
-    description: "Dog food, this shit stinks!",
-    user: cory
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
   {
-    name: "Clothing Expenses",
-    description: "Dog food, this shit stinks!",
-    user: cory
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
   {
-    name: "Party Expenses",
-    description: "Dog food, this shit stinks!",
-    user: cory
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
   {
-    name: "Tax Expenses",
-    description: "Damn, I am hungry!",
-    user: narmeen
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
   {
-    name: "Pets Expenses",
-    description: "Damn, I am hungry!",
-    user: narmeen
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
   {
-    name: "Shoe Expenses",
-    description: "Damn, I am hungry!",
-    user: narmeen
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
   {
-    name: "Synagogue Expenses",
-    description: "Damn, I am hungry!",
-    user: narmeen
-    amounts_cents: default: 0, null: false
-  }
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
   {
-    name: "Church Expenses",
-    description: "Damn, I am hungry!",
-    user: narmeen
-    amounts_cents: default: 0, null: false
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
+  {
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
+  },
+  {
+    category_list: categories.sample,
+    user: zaneta,
+    amount: 500
   }
-
-  # CORY TODO: 5 BUDGETS per user
 ]
 
-puts "creating beautiful Ben budgets...."
+puts "creating smart budgets...."
 Budget.create!(budget_attributes)
-cat_budget = Budget.find_by(name: "Cat Expenses")
-dog_budget = Budget.find_by(name: "Dog Expenses")
-house_budget = Budget.find_by(name: "House Expenses")
-car_budget = Budget.find_by(name: "Car Expenses")
-travel_budget = Budget.find_by(name: "Travel Expenses")
-healthcare_budget = Budget.find_by(name: "Healthcare Expenses")
-emergency_budget = Budget.find_by(name: "Emergency Expenses")
-transportation_budget = Budget.find_by(name: "Transportation Expenses")
-kids_budget = Budget.find_by(name: "Kids Expenses")
-clothing_budget = Budget.find_by(name: "Clothing Expenses")
-party_budget = Budget.find_by(name: "Party Expenses")
-tax_budget = Budget.find_by(name: "Tax Expenses")
-pets_budget = Budget.find_by(name: "Pets Expenses")
-shoe_budget = Budget.find_by(name: "Shoe Expenses")
-synagogue_budget = Budget.find_by(name: "Synagogue Expenses")
-church_budget = Budget.find_by(name: "Church Expenses")
+
 #Cory TODO get the names of the budgets
 
 # Cash Flow Seeds
 
 ## set cash flow seed info
-cash_flow_attributes = [
-  {
-    nature: "expense",
-    date: Date.today,
-    user: zaneta,
-    budget: cat_budget
-  },
-  {
-    nature: "income"
-    date: Date.today
-    user: cory,
-    budget: dog_budget
-  }
-  {
-    nature: "expense"
-    date: Date.today
-    user: narmeen,
-    budget: house_budget
-  }
-  {
-    nature: "income"
-    date: Date.today
-    user: zaneta,
-    budget: car_budget
-  }
-  {
-    nature: "expense"
-    date: Date.today
-    user: cory,
-    budget: travel_budget
-  }
-  {
-    nature: "income"
-    date: Date.today
-    user: narmeen,
-    budget: healthcare_budget
-  }
-  {
-    nature: "expense"
-    date: Date.today
-    user: zaneta,
-    budget: emergency_budget
-  }
-  {
-    nature: "income"
-    date: Date.today
-    user: cory,
-    budget: transportation_budget
-  }
-  {
-    nature: "expense"
-    date: Date.today
-    user: narmeen,
-    budget: kids_budget
-  }
-  {
-    nature: "income"
-    date: Date.today
-    user: zaneta,
-    budget: clothing_budget
-  }
-  {
-    nature: "income"
-    date: Date.today
-    user: cory,
-    budget: party_budget
-  }
-  {
-    nature: "expense"
-    date: Date.today
-    user: narmeen,
-    budget: tax_budget
-  }
-  {
-    nature: "income"
-    date: Date.today
-    user: cory,
-    budget: pets_budget
-  }
-  {
-    nature: "expense"
-    date: Date.today
-    user: zaneta,
-    budget: shoe_budget
-  }
-  {
-    nature: "income"
-    date: Date.today
-    user: cory,
-    budget: synagogue_budget
-  }
-  {
-    nature: "expense"
-    date: Date.today
-    user: narmeen,
-    budget: church_budget
-  }
-  #CORY TODO more of these
-]
 
-puts "creating beautiful Ben budgets.."
-CashFlow.create!(cash_flow_attributes)
+User.all.each do |user|
+ 5.times do
+   CashFlow.create(date: Date.today - rand(1..3), user: user, budget: user.budgets.sample)
+ end
+end
+
+
+puts "creating smart budgets.."
 
 
 
 #CORY TODO MAKE GOAL SEEDS SAME AS OTHER OBJECTS
-goal1 = Goal.new(
-  name: "House"
-  )
-goal1.save!
-
-
-goal2 = Goal.new(
-  name: "Car"
-  )
-goal2.save!
-
-
-goal3 = Goal.new(
-  name: "Education"
-  )
-goal3.save!
-
-goal4 = Goal.new(
-    name: "Wedding"
-  )
-goal4.save!
-
-
-goal5 = Goal.new(
-  name: "Travel"
-  )
-goal5.save!
-
-
-goal6 = Goal.create!(
-  name: "General Saving"
-  )
-goal6.save!
-
-# CORY TODO: GOALS USERS SEEDS
-# CORY TODO: TAGGINGS SEEDS
-# CORY TODO: TAGS SEED
+Goal.create(name: "House")
+Goal.create(name: "Car")
+Goal.create(name: "Education")

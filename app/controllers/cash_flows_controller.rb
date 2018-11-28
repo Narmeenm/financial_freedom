@@ -1,8 +1,8 @@
 class CashFlowsController < ApplicationController
- 
+
       before_action :set_cashflow, only: [:show, :edit, :update, :destroy]
- 
-  def index 
+
+  def index
     @cash_flows = CashFlow.all     # GET /budgets
   end
 
@@ -14,7 +14,7 @@ class CashFlowsController < ApplicationController
   	@cash_flow = CashFlow.new
 
   end
-	
+
 
   def create        # POST /budgets
   	@cash_flow = CashFlow.new(cashflow_params)
@@ -41,6 +41,7 @@ class CashFlowsController < ApplicationController
     @cash_flow.destroy
     redirect_to budget_cash_flows_path(@cash_flow.budget)
   end	
+
 
 
  private
