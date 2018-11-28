@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="row">
+		<div class="col col-xs-12 budget-fom">
+			<%= simple_form_for @user, url: salary_path  do |f| %>
+        	<%= f.input :salary, label: 'How much you earn?', error: 'This field is mandatory',  placeholder: 'Enter your salary'  %>
+        	<%= f.input :balance, label: 'What is your current balance?', error: 'This field is mandatory',  placeholder: 'Enter your current balance'  %>
+        	<%= f.submit %>
+			<% end %>
+		</div>
+	</div>
+</div>
