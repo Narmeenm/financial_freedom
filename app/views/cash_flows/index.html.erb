@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-offset-3 col-xs-6">
+			<h1>Cash Flow</h1>
+
+            <table>
+			  <thead>
+			    <tr>
+			      <th>Budget</th>
+			      <th>Date</th>
+			      <th>Amount</th>
+			      <th colspan="3"></th>
+			    </tr>
+			  </thead>
+			    <tbody>
+				<% @cash_flows.each do |cash_flow| %>
+				<tr>
+				<td><%= cash_flow.budget.category_list.first %></td>
+				<td><%= cash_flow.date %></td>
+				<td><%= cash_flow.price_cents %></td>
+				<td><%= link_to 'Show', cash_flow %></td>
+		        <td><%= link_to 'Edit', edit_cash_flow_path(cash_flow) %></td>
+		        <td><%= link_to 'Destroy', cash_flow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<% end %>
+			    </tr>
+			   </tbody> 
+		    </table>
+		    <br>
+            <%= link_to 'New Cash Flow', new_budget_cash_flow_path %>
+		</div>
+	</div>
+</div>
