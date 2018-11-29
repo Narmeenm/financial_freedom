@@ -7,7 +7,9 @@ class BudgetsController < ApplicationController
 
   def show         # GET /budgets/:id
   	@budget = Budget.find(params[:id])
+   @cash_flows = @budget.cash_flows
   end
+
 
   def new           # GET /budgets/new
   	@budget = Budget.new

@@ -19,8 +19,11 @@ class CashFlowsController < ApplicationController
   def create        # POST /budgets
   	@cash_flow = CashFlow.new(cashflow_params)
   	@cash_flow.user = current_user
+    @budget = Budget.find(@cash_flow.budget_id)
+    @budget.Budget_balance ||= 0
+    @budget.Budget_balance += @cash_flow.price_cents
     @cash_flow.save
-    if @cash_flow.save!
+    if  @cash_flow.save!
     	redirect_to budget_cash_flows_path(@cash_flow.budget)
     else 
     	render :new	
