@@ -13,7 +13,8 @@ def save_salary
 end
 
 def dashboard
-  
+   @budgets = current_user.budgets
+   @budgets = Budget.where(user_id: current_user.id)
 end	
 
 
