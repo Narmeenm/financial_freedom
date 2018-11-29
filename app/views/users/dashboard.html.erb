@@ -1,0 +1,15 @@
+
+<ul>
+<h1>Budgets' User</h1>
+<% @budgets.each do |budget| %>
+  <li><%= budget.category_list %></li>
+				<li><%= budget.description %></li>
+				<li><%= budget.amount_cents %></li>
+				<li><%= link_to 'Show', budget %></li>
+		        <li><%= link_to 'Edit', edit_budget_path(budget) %></li>
+<% end %>
+</ul>
+
+
+<h1>Salary: <%= current_user.salary %> </h1>
+<h1>Balance: <%= current_user.balance %> </h1>
