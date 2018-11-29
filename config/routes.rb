@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :user_goals , only: [:new, :create, :destroy]
+  resources :user_goals , only: [:new, :create, :destroy, :show]
 
 
     resources :budgets do
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   get 'users/salary' ,to: 'users#salary'
   patch "/salary", to: "users#save_salary"
 
-  get '/dashboard' ,to: 'users#dashboard' 
+  get '/dashboard' ,to: 'users#dashboard'
 end
