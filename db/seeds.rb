@@ -64,77 +64,77 @@ categories = ["Food & Drink","Bills & Fees", "Car", "Education", "Transport", "C
 budget_attributes = [
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 750
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   },
   {
     category_list: categories.sample,
-    user: zaneta,
+    user: User.all.sample,
     amount: 500
   }
 ]
@@ -143,14 +143,13 @@ puts "creating smart budgets...."
 Budget.create!(budget_attributes)
 
 #Cory TODO get the names of the budgets
-
 # Cash Flow Seeds
 
 ## set cash flow seed info
 
 User.all.each do |user|
  5.times do
-   CashFlow.create(date: Date.today - rand(1..3), user: user, budget: user.budgets.sample)
+   CashFlow.create!(date: Date.today - rand(1..3), user: user, budget: user.budgets.sample)
  end
 end
 

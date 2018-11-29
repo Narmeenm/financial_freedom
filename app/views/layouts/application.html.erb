@@ -16,6 +16,7 @@
     <%end%>
     <%= render 'shared/flashes' %>
     <div class="yield-wrapper">
+    <%= javascript_pack_tag 'application' %>
     <%= yield %>
     </div>
     <% if user_signed_in? %>
@@ -23,6 +24,5 @@
     <%end%>
 
     <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
   </body>
 </html>
