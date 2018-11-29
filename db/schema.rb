@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_28_095803) do
+ActiveRecord::Schema.define(version: 2018_11_28_154536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,18 +40,9 @@ ActiveRecord::Schema.define(version: 2018_11_28_095803) do
 
   create_table "goals", force: :cascade do |t|
     t.string "name"
-    t.string "description"
     t.string "image_goal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "goals_users", id: false, force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "goal_id", null: false
-    t.integer "amount_cents", default: 0, null: false
-    t.index ["goal_id"], name: "index_goals_users_on_goal_id"
-    t.index ["user_id"], name: "index_goals_users_on_user_id"
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -79,6 +70,16 @@ ActiveRecord::Schema.define(version: 2018_11_28_095803) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  create_table "user_goals", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "goal_id"
+    t.integer "amount_cents", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_user_goals_on_goal_id"
+    t.index ["user_id"], name: "index_user_goals_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -100,4 +101,6 @@ ActiveRecord::Schema.define(version: 2018_11_28_095803) do
   add_foreign_key "budgets", "users"
   add_foreign_key "cash_flows", "budgets"
   add_foreign_key "cash_flows", "users"
+  add_foreign_key "user_goals", "goals"
+  add_foreign_key "user_goals", "users"
 end

@@ -9,10 +9,10 @@
 		      <%= f.association :budget, collection: current_user.budgets, label_method: :category_list %>
 			  <%= f.submit %>
 			<% end %>
-			
+
 		</div>
 	</div>
 </div>
 
-<%= link_to 'Show', @cash_flow %> 
+<%= link_to 'Show', @cash_flow %>
 <%= link_to 'Back', root_path %>

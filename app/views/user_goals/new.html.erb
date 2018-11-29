@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-xs-12 budget-form">
+      <%= simple_form_for [@user_goal] do |f| %>
+        <%= f.input :amount_cents, label: 'How much do you want to save?', error: 'This field is mandatory',  placeholder: 'Enter the amount'  %>
+
+        <%= f.input :category_list ,as: :radio_buttons, label: 'Choose a category:', collection:["House", "Car", "Education", "Travel", "General saving"] %>
+        <%= f.button :submit, "Add", class: "add-button" %>
+      <% end %>
+    </div>
+  </div>
+</div>
