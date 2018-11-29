@@ -1,6 +1,23 @@
 class UsersController < ApplicationController
  
- def show
+ def salary
+    # @user.salary = current_user.salary
+    @user = current_user 
+ end
+def save_salary
+    @user = current_user 
 
+	@user.update(salary_params)
+	redirect_to dashboard_path
+	
+end
+
+def dashboard
+  
+end	
+
+
+ def salary_params
+    params.require(:user).permit(:salary,:balance)
  end	
 end
