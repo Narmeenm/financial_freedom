@@ -5,6 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :budgets
   has_many :cash_flows
-  has_and_belongs_to_many :goals
-
+  has_many :goals, through: :user_goals
 end

@@ -1,8 +1,8 @@
 class CashFlowsController < ApplicationController
- 
+
       before_action :set_cashflow, only: [:show, :edit, :update, :destroy]
- 
-  def index 
+
+  def index
     @cash_flows = CashFlow.all     # GET /budgets
   end
 
@@ -14,7 +14,7 @@ class CashFlowsController < ApplicationController
   	@cash_flow = CashFlow.new
 
   end
-	
+
 
   def create        # POST /budgets
   	@cash_flow = CashFlow.new(cashflow_params)
@@ -22,8 +22,8 @@ class CashFlowsController < ApplicationController
     @cash_flow.save
     if @cash_flow.save!
     	redirect_to budget_cash_flows_path(@cash_flow)
-    else 
-    	render :new	
+    else
+    	render :new
   	end
   end
 
@@ -39,12 +39,12 @@ class CashFlowsController < ApplicationController
   def destroy
     @cash_flow.destroy
     redirect_to budget_cash_flows_path
-  end	
+  end
 
 
  private
   def cashflow_params
-    params.require(:cash_flow).permit(:price_cents,:date,:budget_id ,:budget.category_list)
+    params.require(:cash_flow).permit(:price_cents,:date,:budget_id )
   end
 
     def set_cashflow

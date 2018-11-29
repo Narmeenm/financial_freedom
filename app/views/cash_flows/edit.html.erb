@@ -3,16 +3,16 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-offset-3 col-xs-6">
-			<%= simple_form_for(@cash_flow, method: :patch, url: edit_cash_flow_path) do |f| %>
+			<%= simple_form_for(@cash_flow, method: :patch, url: cash_flow_path) do |f| %>
 			  <%= f.input :price_cents, label: "Amount" %>
 			  <%= f.input :date  %>
 		      <%= f.association :budget, collection: current_user.budgets, label_method: :category_list %>
 			  <%= f.submit %>
 			<% end %>
-			
+
 		</div>
 	</div>
 </div>
 
-<%= link_to 'Show', @cash_flow %> 
+<%= link_to 'Show', @cash_flow %>
 <%= link_to 'Back', root_path %>
