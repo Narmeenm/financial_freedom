@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+flex-direction: column;
+  width: 100vw;
+  height: 86vh;
+
+}
+
+.info-goal {
+  box-shadow: 2px 2px rgba(0,0,0,0.2);
+  width: 100vw;
+  height: 30vh;
+  padding: 5px 10px;
+  margin: 15px 4px;
+
+}
+
+.goal-chart {
+    box-shadow: 2px 2px rgba(0,0,0,0.2);
+
+    width: 100vw;
+    height: 30vh;
+    background-color: black;
+  padding: 5px 10px;
+    margin: 15px 4px;
+
+
+
+}
+
+.col {
+  margin-left: none;
+}
