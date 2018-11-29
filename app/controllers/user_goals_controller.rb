@@ -8,10 +8,16 @@ class UserGoalsController < ApplicationController
     @user_goal = UserGoal.new
   end
 
+  def show         # GET /budgets/:id
+    @user_goal = UserGoal.find(params[:id])
+  end
+
 
   def create
     @user_goal = UserGoal.new(user_goal_params)
     @user_goal.user = current_user
+    @goal = Goal.find(params[:user_goal][:goal_id])
+    @user_goal.goal = @goal
     @user_goal.save
     if @user_goal.save!
       redirect_to user_goal_path(@user_goal)
