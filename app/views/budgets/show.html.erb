@@ -1,0 +1,11 @@
+
+
+
+<h1>Expenses For Every budget</h1>
+<ul>
+<% @cash_flows.each do |cash_flow| %>
+  <li><%= cash_flow.price_cents %></li>
+
+  <li><%= cash_flow.date %></li>
+<% end %>
+</ul>
