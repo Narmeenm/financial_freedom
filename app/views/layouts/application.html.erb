@@ -13,16 +13,24 @@
  <!-- NEW! -->
   </head>
   <body>
+
+
     <% if user_signed_in? %>
+        <div id="header">
+
     <%= render 'shared/navbar' %>
+  </div>
     <%end%>
     <%= render 'shared/flashes' %>
     <div class="yield-wrapper">
     <%= yield %>
-    </div>
+        </div>
+
    <% if user_signed_in? %>
+   <div id="footer">
     <%= render 'shared/footer' %>
-        <%end%>
+  </div>
+    <%end%>
 
     <%= javascript_include_tag 'application' %>
   </body>
