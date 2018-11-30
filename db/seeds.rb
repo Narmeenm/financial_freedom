@@ -18,10 +18,14 @@ require 'time'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying all the seeds"
-CashFlow.destroy_all
-Budget.destroy_all
-User.destroy_all
 Goal.destroy_all
+
+User.destroy_all
+
+Budget.destroy_all
+CashFlow.destroy_all
+
+
 
 # User Seeds
 
