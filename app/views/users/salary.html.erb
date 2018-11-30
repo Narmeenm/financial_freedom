@@ -1,11 +1,15 @@
-<div class="container">
-	<div class="row">
-		<div class="col col-xs-12 budget-fom">
+
+<div class="container new-goal-wrap">
+      <div class="question"><h4> How much you earned this month? </h4></div>
+	    <div class="row">
+		 <div class="col col-xs-12 budget-fom">
 			<%= simple_form_for @user, url: salary_path  do |f| %>
-        	<%= f.input :salary, label: 'How much you earn?', error: 'This field is mandatory',  placeholder: 'Enter your salary'  %>
-        	<%= f.input :balance, label: 'What is your current balance?', error: 'This field is mandatory',  placeholder: 'Enter your current balance'  %>
-        	<%= f.submit %>
+        	<%= f.input :salary,label:false, error: 'This field is mandatory',  placeholder: 'Enter your salary'  %>
+        	<%= f.button :submit, "Add", class: "add-button add-goal-but" %>
 			<% end %>
 		</div>
 	</div>
 </div>
+
+
+
