@@ -6,10 +6,12 @@ Rails.application.routes.draw do
     resources :budgets do
       resources :cash_flows , shallow: true
     end
-  root to: 'users#dashboard'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'users/salary' ,to: 'users#salary'
-  patch "/salary", to: "users#save_salary"
-
+  get '/salary' ,to: 'users#salary'
+  patch '/salary', to: "users#save_salary"
+  get '/balance', to:"users#balance"
   get '/dashboard' ,to: 'users#dashboard'
 end
+
+
