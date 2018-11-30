@@ -3,11 +3,12 @@ class CashFlowsController < ApplicationController
       before_action :set_cashflow, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cash_flows = CashFlow.all     # GET /budgets
+    @cash_flows = CashFlow.find(current_user.cash_flow_ids)  
+  # GET /budgets
   end
 
   def show         # GET /budgets/:id
-  	@cash_flows = CashFlow.find(params[:id])
+  	@cash_flow = CashFlow.find(params[:id])
   end
 
   def new           # GET /budgets/new

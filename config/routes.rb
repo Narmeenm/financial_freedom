@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     end
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'users/salary' ,to: 'users#salary'
-  patch "/salary", to: "users#save_salary"
-  get 'users/balance', to:"users#balance"
+  get '/salary' ,to: 'users#salary'
+  patch '/salary', to: "users#save_salary"
+  get '/balance', to:"users#balance"
   get '/dashboard' ,to: 'users#dashboard'
 end
 
