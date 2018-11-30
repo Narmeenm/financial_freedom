@@ -1,11 +1,15 @@
-<div class="container">
+
+<div class="container new-goal-wrap">
+      <div class="question"><h4> What are you saving for? </h4></div>
+
   <div class="row">
     <div class="col col-xs-12 budget-form">
       <%= simple_form_for [@user_goal] do |f| %>
-        <%= f.input :amount_cents, label: 'How much do you want to save?', error: 'This field is mandatory',  placeholder: 'Enter the amount'  %>
 
-        <%= f.input :goal_id ,as: :radio_buttons, label: 'Choose a category:', collection: Goal.all %>
-        <%= f.button :submit, "Add", class: "add-button" %>
+
+        <%= f.input :goal_id ,as: :radio_buttons,  label: false, collection: Goal.all %>
+        <%= f.input :amount_cents, label: false, error: 'This field is mandatory',  placeholder: 'Enter the amount'  %>
+        <%= f.button :submit, "Add", class: "add-button add-goal-but" %>
       <% end %>
     </div>
   </div>
