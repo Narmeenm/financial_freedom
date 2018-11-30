@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'users/salary' ,to: 'users#salary'
   patch "/salary", to: "users#save_salary"
-
+  get 'users/balance', to:"users#balance"
   get '/dashboard' ,to: 'users#dashboard'
 end
+
+
