@@ -1,5 +1,5 @@
 .card {
-  height: 175px;
+  height: 20vh;
   background-size: cover !important;
   background-position: center;
   color: #white;
@@ -8,16 +8,16 @@
 }
 .card-user {
   position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
+  right: 2vw;
+  top: 2vh;
+  width: 3vw;
   border-radius: 50%;
 }
 .card-category {
   // position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
+  top: 2vh;
+  left: 2vw;
+  font-size: 3vh;
   text-transform: uppercase;
 }
 // .first-card{
@@ -26,10 +26,10 @@
 //   left: 10px;
 // }
 .card-description h2 {
-  font-size: 24px;
+  font-size: 3vh;
 }
 .card-description p {
-  font-size: 14px;
+  font-size: 2vh;
   opacity: 0.7;
   font-weight: lighter;
 }
