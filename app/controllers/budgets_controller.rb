@@ -1,7 +1,7 @@
 class BudgetsController < ApplicationController
 
   	before_action :set_budget, only: [:show, :edit, :update, :destroy]
-  def index 
+  def index
     @budgets = Budget.all     # GET /budgets
   end
 
@@ -11,7 +11,8 @@ class BudgetsController < ApplicationController
   end
 
 
-  def new           # GET /budgets/new
+  def new
+    @categories = ["food.png", "bills.png", "car.png", "clothes.png", "education.png", "entertaiment.png", "home.png", "transport.png", "health.png"]        # GET /budgets/new
   	@budget = Budget.new
   end
 
@@ -20,8 +21,8 @@ class BudgetsController < ApplicationController
   	@budget.user = current_user
     if @budget.save!
     	redirect_to budgets_path(@budget)
-    else 
-    	render :new	
+    else
+    	render :new
   	end
   end
 
@@ -35,7 +36,7 @@ class BudgetsController < ApplicationController
   end
 
   def destroy       # DELETE /budgets/:id
-  	
+
     @budget.destroy
     redirect_to budgets_path
   end
