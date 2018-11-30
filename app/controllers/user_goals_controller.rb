@@ -20,7 +20,7 @@ class UserGoalsController < ApplicationController
     @user_goal.goal = @goal
     @user_goal.save
     if @user_goal.save!
-      redirect_to users_salary_path(@user_goal)
+      redirect_to salary_path(@user_goal)
     else
       render :new
     end
