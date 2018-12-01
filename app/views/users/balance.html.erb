@@ -1,20 +1,23 @@
-<div class="container new-goal-wrap">
-      <div class="question"><h4> How much do I have left? </h4></div>
-      <div class="row">
-     <div class="col col-xs-12 budget-fom">
-
-   <h5>$<%= @user.balance  %></h5>
+<div class="container">
+  <div class="savings">
+    <div class="col-xs-12">
+      <!-- insert <div class="card"> -->
+        <p id="balance">How much do I have left?</p>
+        <p id="balance-amount">$<%= @user.balance  %></p>
     </div>
   </div>
-</div>
-
-<div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
+    <div class="col-xs-6">
+      <p>New Expense</p>
+      <%= link_to new_budget_cash_flow_path(:budget_id) do%>
+        <i class="fas fa-plus-circle"></i>
+      <% end %>
     </div>
-    <div class="col-xs-12 col-sm-4">
-      <!-- insert <div class="card"> -->
+    <div class="col-xs-6">
+      <p>Progress Report</p>
+      <%= link_to dashboard_path do %>
+        <i class="fas fa-chart-line"></i>
+      <% end %>
     </div>
-      </div>
+  </div>
 </div>
