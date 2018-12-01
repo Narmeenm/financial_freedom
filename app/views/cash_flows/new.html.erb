@@ -1,13 +1,13 @@
 <div class="container">
-	<div class="row">
-		<div class="col-xs-offset-3 col-xs-6">
+	<div class="row cashflow-wrapper">
+		<div class="col-xs-offset-1 col-xs-10">
 			<%= simple_form_for(@cash_flow, method: :post, url: budget_cash_flows_path) do |f| %>
 			  <%= f.input :price_cents, label: "Amount" %>
-			  <%= f.input :date  %>
+			  <%= f.input :date, as: :string,  input_html: {class: "datepicker"}  %>
 		      <%= f.association :budget, collection: current_user.budgets, label_method: :category_list %>
 			  <%= f.submit %>
 			<% end %>
-			
+
 		</div>
 	</div>
 </div>
