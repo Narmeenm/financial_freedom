@@ -15,6 +15,7 @@ def save_salary
 end
 
 def balance
+  @budget = Budget.new
 	@user = current_user
 	@expense = 0
 	@user.cash_flow_ids.each do |cf|
