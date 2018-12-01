@@ -5,9 +5,8 @@
   <div class="row">
     <div class="col col-xs-12 budget-form">
       <%= simple_form_for [@user_goal] do |f| %>
+       <%= f.input :goal_id, as: :radio_buttons,  label: false, collection: Goal.all.map { |g| [image_tag(g.image_goal), g.id] } %>
 
-
-        <%= f.input :goal_id ,as: :radio_buttons,  label: false, collection: Goal.all %>
         <%= f.input :amount_cents, label: false, error: 'This field is mandatory',  placeholder: 'Enter the amount'  %>
         <%= f.button :submit, "Add", class: "add-button add-goal-but" %>
       <% end %>

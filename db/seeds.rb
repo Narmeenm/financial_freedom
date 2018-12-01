@@ -18,8 +18,8 @@ require 'time'
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroying all the seeds"
-Goal.destroy_all
 
+Goal.destroy_all
 User.destroy_all
 
 Budget.destroy_all
@@ -163,6 +163,6 @@ puts "creating smart budgets.."
 
 
 #CORY TODO MAKE GOAL SEEDS SAME AS OTHER OBJECTS
-Goal.create(name: "House")
-Goal.create(name: "Car")
-Goal.create(name: "Education")
+Goal.create(name: "House", image_goal: 'https://i.ibb.co/KN8c6pf/college-graduation-1.png' )
+Goal.create(name: "Car", image_goal: 'https://i.ibb.co/D8pVzsB/goal-car.png')
+Goal.create(name: "Education", image_goal: 'https://i.ibb.co/tD1rV3B/edugoal.png')
