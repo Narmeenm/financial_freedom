@@ -1,8 +1,9 @@
 class BudgetsController < ApplicationController
 
   	before_action :set_budget, only: [:show, :edit, :update, :destroy]
-  def index
-    @budgets = Budget.all     # GET /budgets
+
+  def index 
+    @budgets = Budget.find(current_user.budget_ids)    # GET /budgets
   end
 
   def show         # GET /budgets/:id
