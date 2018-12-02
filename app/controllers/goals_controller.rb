@@ -1,6 +1,15 @@
 class GoalsController < ApplicationController
 before_action :set_goal
 
+def new
+    @goal = Goal.new
+  end
+
+  def index
+    @goals = Goal.find(current_user.goal_ids)    # GET /budgets
+  end
+
+end
 
  private
   def goal_params
