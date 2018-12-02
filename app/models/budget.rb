@@ -1,5 +1,6 @@
 class Budget < ApplicationRecord
   belongs_to :user
+  belongs_to :category
   monetize :amount_cents
   acts_as_taggable_on :categories
   

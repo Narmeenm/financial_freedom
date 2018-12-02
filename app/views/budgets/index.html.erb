@@ -15,7 +15,7 @@
 			    <tbody>
 				<% @budgets.each do |budget| %>
 				<tr>
-				<td><%= image_tag(budget.category_list.first.downcase) %></td>
+				<td><%= image_tag(Category.find_by(id: budget.category_id).photo) %></td>
 				<td><%= budget.description %></td>
 				<td><%= budget.amount_cents %></td>
 				<td><%= link_to 'Show', budget %></td>
