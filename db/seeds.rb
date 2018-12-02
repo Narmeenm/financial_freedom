@@ -19,11 +19,12 @@ require 'time'
 
 puts "Destroying all the seeds"
 
-Goal.destroy_all
-User.destroy_all
 
-Budget.destroy_all
 CashFlow.destroy_all
+Budget.destroy_all
+UserGoal.destroy_all
+User.destroy_all
+Goal.destroy_all
 
 
 
