@@ -6,7 +6,7 @@
 			  <%= f.input :description, label: false, placeholder: 'Description'  %>
 			  <%= f.input :start_date, as: :string, label: 'Starting date', input_html: { id: "range_start" }  %>
 			  <%= f.input :end_date, as: :string, label: 'Ending date', input_html: { id: "range_end" }  %>
-			  <%= f.input :category_list,  as: :radio_buttons, label: 'Choose a category:', collection: @categories.map { |e| image_tag(e) } %>
+			  <%= f.input :category_list,  as: :radio_buttons, label: 'Choose a category:', collection: @categories.map { |e| [image_tag(e), e]} %>
 			  <%= f.button :submit, "Add", class: "add-button" %>
 			<% end %>
 		</div>
@@ -14,3 +14,5 @@
 </div>
 
 checkbox type hidden!!!!
+ 
+
