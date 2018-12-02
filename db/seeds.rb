@@ -64,7 +64,7 @@ cory = User.find_by(first_name: "Cory")
 
 
 # Budget Seeds
-categories = ["Food & Drink","Bills & Fees", "Car", "Education", "Transport", "Clothes", "Home", "Entertainment","Healthcare"]
+categories = ["food.png", "bills.png", "car.png", "clothes.png", "education.png", "entertaiment.png", "home.png", "transport.png", "health.png"]
 ## set budget seed info
 budget_attributes = [
   {
