@@ -13,17 +13,20 @@ class CashFlowsController < ApplicationController
 
   def new           # GET /budgets/new
   	@cash_flow = CashFlow.new
+    @budgets = Budget.where(user_id: current_user.id)
+    @categories = []
+    @budgets.each { |budget| @categories.push(Category.find(budget.category_id))}
 
   end
 
 
   def create        # POST /budgets
   	@cash_flow = CashFlow.new(cashflow_params)
-  	@cash_flow.user = current_user
-    @budget = Budget.find(@cash_flow.budget_id)
-    @budget.Budget_balance
-    @budget.Budget_balance += @cash_flow.price_cents
-    @budget.save!
+  	@cash_flow.user = current_user    
+
+    # @budget.Budget_balance
+    # @budget.Budget_balance += @cash_flow.price_cents
+    # @budget.save!
     @cash_flow.save
     if  @cash_flow.save!
     	redirect_to budget_cash_flows_path(@cash_flow.budget)

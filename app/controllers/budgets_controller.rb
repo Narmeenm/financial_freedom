@@ -2,8 +2,12 @@ class BudgetsController < ApplicationController
 
   	before_action :set_budget, only: [:show, :edit, :update, :destroy]
 
-  def index 
-    @budgets = Budget.find(current_user.budget_ids)    # GET /budgets
+  def index
+    @budgets = Budget.find(current_user.budget_ids)
+    @categories = []
+    @budgets.map do |budget|
+      @categories.push(Category.where(id: budget.category_id))
+      end # GET /budgets
   end
 
   def show         # GET /budgets/:id
@@ -13,7 +17,7 @@ class BudgetsController < ApplicationController
 
 
   def new
-    @categories = ["food.png", "bills.png", "car.png", "clothes.png", "education.png", "entertaiment.png", "home.png", "transport.png", "health.png"]        # GET /budgets/new
+    @categories = Category.all
   	@budget = Budget.new
   end
 
@@ -46,7 +50,7 @@ class BudgetsController < ApplicationController
 
  private
   def budget_params
-    params.require(:budget).permit(:name, :description, :amount_cents, :start_date ,:end_date ,:category_list)
+    params.require(:budget).permit(:name, :description, :amount_cents, :start_date ,:end_date ,:category_id)
   end
 
     def set_budget
