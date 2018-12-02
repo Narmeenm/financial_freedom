@@ -1,4 +1,4 @@
-.budget-form {
+.goal-form {
   color: white;
   padding: 1vh 1vw ;
   //margin: 1vh 4vw 1vh 4vw;
@@ -23,18 +23,6 @@
 .hide-checkbox {
   position:fixed;
   opacity:0;
-}
-
-
-
-
-#budget_amount_cents {
-      width: 50vw;
-
-}
-
-#budget_description {
-  height: 10vh;
 }
 
 .new_goal_wrap {
@@ -115,5 +103,9 @@ p{
 .title{
   margin-top: 6vh;
   margin-bottom: 25px;
+}
+
+.form-check {
+  display: inline;
 }
 
