@@ -1,9 +1,10 @@
 
 <div class="container new-goal-wrap">
-      <div class="question"><h4> What are you saving for? </h4></div>
-
+  <p class="title">
+    Hi, <%=current_user.first_name%><br>What you are <br>saving for?
+  </p>
   <div class="row">
-    <div class="col col-xs-12 budget-form">
+    <div class="col col-xs-12 budget-form radio-inline">
       <%= simple_form_for [@user_goal] do |f| %>
        <%= f.input :goal_id, as: :radio_buttons, input_html: {class: "hide-checkbox"}, :label => '', :label_html => {:style => "width: auto; min-width:0;"}, collection: Goal.all.map { |g| [image_tag(g.image_goal), g.id] } %>
 
