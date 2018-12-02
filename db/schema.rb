@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_133149) do
+ActiveRecord::Schema.define(version: 2018_12_02_150338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2018_11_29_133149) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer "Budget_balance"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_budgets_on_category_id"
     t.index ["user_id"], name: "index_budgets_on_user_id"
   end
 
@@ -37,6 +39,13 @@ ActiveRecord::Schema.define(version: 2018_11_29_133149) do
     t.integer "price_cents", default: 0, null: false
     t.index ["budget_id"], name: "index_cash_flows_on_budget_id"
     t.index ["user_id"], name: "index_cash_flows_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "goals", force: :cascade do |t|
@@ -99,6 +108,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_133149) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "budgets", "categories"
   add_foreign_key "budgets", "users"
   add_foreign_key "cash_flows", "budgets"
   add_foreign_key "cash_flows", "users"
