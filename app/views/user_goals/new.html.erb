@@ -4,12 +4,12 @@
     Hi, <%=current_user.first_name%><br>What you are <br>saving for?
   </p>
   <div class="row">
-    <div class="col col-xs-12 budget-form radio-inline">
+    <div class="col col-xs-12 goal-form radio-inline">
       <%= simple_form_for [@user_goal] do |f| %>
-       <%= f.input :goal_id, as: :radio_buttons, input_html: {class: "hide-checkbox"}, :label => '', :label_html => {:style => "width: auto; min-width:0;"}, collection: Goal.all.map { |g| [image_tag(g.image_goal), g.id] } %>
+       <%= f.input :goal_id, required: true, as: :radio_buttons, input_html: {class: "hide-checkbox"}, :label => '', :label_html => {:style => "width: auto; min-width:0;"}, collection: Goal.all.map { |g| [image_tag(g.image_goal), g.id] }, class: 'col-xs-4 image_goal' %>
 
         <%= f.input :amount_cents, label: false, error: 'This field is mandatory',  placeholder: 'Enter the amount'  %>
-        <%= f.button :submit, "Add", class: "add-button add-goal-but" %>
+        <%= f.button :submit, "Submit", class: "add-button add-goal-but" %>
       <% end %>
     </div>
   </div>
