@@ -1,79 +1,47 @@
 <div class="container main-dashboard">
   <div class="row">
-    <div class="col-xs-6 col-sm-6">
-      <div class="card">
-        <div class="card-category">Balance</div>
-        <div class="card-description">
-          <h2>$<%= current_user.balance %></h2>
-          <p></p>
+    <%= pie_chart current_user.cash_flows.group(:budget).count%>
+      <div class="col-xs-6 col-sm-6">
+        <div class="card">
+          <div class="card-category">Balance
+            <div class="card-description">
+              <h2>$ <%= current_user.balance %></h2>
+              <p></p>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- insert <div class="card"> -->
+
+    <div id="bar-2" class="bar-main-container emerald">
+      <div class="wrap">
+        <div class="bar-percentage" data-percentage="94"></div>
+        <div class="bar-container">
+          <div class="bar"></div>
+        </div>
+      </div>
     </div>
-    <div class="col-xs-6 col-sm-6">
-      <div class="card">
-        <div class="card-category">Spending</div>
-        <div class="card-description">
-          <h2>$350</h2>
-          <p></p>
+
+      <div class="col-xs-6 col-sm-6">
+        <div class="card">
+          <div class="card-category">the first goal</div>
+            <div class="card-description">
+              <h2>$ <%= @user_goal.amount_cents%></h2>
+              <h2>% <%= (current_user.balance.to_f / @user_goal.amount_cents.to_f)* 100 %></h2>
+              <p></p>
+            </div>
+          </div>
         </div>
       </div>
   </div>
-  </div>
-  <%= pie_chart current_user.cash_flows.group(:budget).count%>
-  <div class="row">
-      <div class="col-xs-12 col-sm-12">
-      <div class="card">
-        <div class="card-category">Metrics</div>
-        <div class="card-description">
-          <h2></h2>
-          <p></p>
-        </div>
-      </div>
-      <!-- insert <div class="card"> -->
-    </div>
-  </div>
-</d iv>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-sm-6">
-      <div class="card">
-        <div class="card-category">Total Income</div>
-        <div class="card-description">
-          <h2>$<%= current_user.balance %></h2>
-          <p></p>
-        </div>
-      </div>
-      <!-- insert <div class="card"> -->
-    </div>
-    <div class="col-xs-6 col-sm-6">
-      <div class="card">
-        <div class="card-category">Total Expense</div>
-        <div class="card-description">
-          <h2>$600</h2>
-          <p></p>
-        </div>
-      </div>
-  </div>
-  </div>
-
-<h3> Goals : <%= @user_goal.amount_cents%></h3>
-
-
-<ul>
-<h1>Budgets' User</h1>
-<% @budgets.each do |budget| %>
-  <li><%= budget.category_list %></li>
-				<li><%= budget.description %></li>
-				<li><%= budget.amount_cents %></li>
-				<li><%= link_to 'Show', budget %></li>
-		        <li><%= link_to 'Edit', edit_budget_path(budget) %></li>
-<% end %>
-</ul>
-
-
-<h1>Balance: <%= current_user.balance %> </h1>
-
+<br>
+    <ul>
+    <h2>My Budgets</h2>
+    <% @budgets.each do |budget| %>
+          <li class="baige-big"><a href="#Home"><%= image_tag(budget.category_list.first.downcase) %></a></li>
+    				<li><%= budget.amount_cents %></li>
+    				<li><%= link_to 'Show', budget %></li>
+    		     <li><%= link_to 'Edit', edit_budget_path(budget) %></li>
+    <% end %>
+    </ul>
 </div>
-      <!-- insert <div class="card"> -->
-
+      
