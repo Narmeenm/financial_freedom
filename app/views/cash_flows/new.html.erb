@@ -5,7 +5,7 @@
 			  <%= f.input :price_cents, label: "Amount" %>
 			  <%= f.input :date, as: :string,  input_html: {class: "datepicker"}  %>
 		      <%= f.association :budget, collection: current_user.budgets, label_method: :category_list %>
-			  <%= f.submit %>
+			  <%= f.submit "Submit", :class => "submit_btn" %>
 			<% end %>
 
 		</div>
