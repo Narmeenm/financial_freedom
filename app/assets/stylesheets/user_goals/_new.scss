@@ -55,23 +55,13 @@ border-radius: 3px;
 border-radius: 12px;
 //margin-top: 3vh;
 color:  white;
-height: 30vh;
+height: 25vh;
 width: 90vw;
 
 }
 
 .col-form-label {
  color:  #00af7b
-}
-
-
-.question {
-  color: #00AF7B;
-  text-align: center;
- background-color: white;
- box-shadow: 2px 3px rgba(100,100,100,0.3);
-border-radius: 12px;
-margin-top: 4vh;
 }
 
 
@@ -101,3 +91,17 @@ p{
   display: inline;
 }
 
+.icon-active{
+  background-color: #CA3857;
+  padding: 1px;
+}
+
+.icon-resting{
+  // margin-top: 6vh;
+  margin-left: 4vh;
+  margin-right: 4vh;
+}
+
+// .col-form-label{
+//   display: none;
+// }
