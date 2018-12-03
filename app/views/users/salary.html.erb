@@ -4,7 +4,7 @@
 	    <div class="row">
 		 <div class="col col-xs-12 budget-fom">
 			<%= simple_form_for @user, url: salary_path  do |f| %>
-        	<%= f.input :salary,label:false, error: 'This field is mandatory',  placeholder: 'Enter your salary'  %>
+        	<%= f.input :salary,label:false, error: 'This field is mandatory',  placeholder: 'Enter your salary', as: :string %>
           <%= f.submit "Submit", :class => "submit_btn" %>
 			<% end %>
 		</div>
