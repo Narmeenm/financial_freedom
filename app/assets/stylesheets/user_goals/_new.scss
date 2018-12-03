@@ -73,17 +73,6 @@ border-radius: 12px;
 margin-top: 4vh;
 }
 
-.add-goal-but {
-  width: 60vw;
-  height: 8vh;
-  border-radius: 25px;
-  background-color: white;
-  color: #FF5D00;
-  border-color: #FF5D00;
-  border: 4px solid;
-  font-size: 3vh;
-
-}
 
 p{
   width: 100%;
@@ -95,9 +84,11 @@ p{
 .submit_btn {
   border-color: #CA3857;
   border-radius: 100px;
-  border-width: 3px;
+  border-width:5px;
   color: #CA3857;
   background-color: white;
+  text-align: center;
+  font-size: 30px;
 }
 
 .title{
