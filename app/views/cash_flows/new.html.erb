@@ -13,3 +13,14 @@
 </div>
 
 
+<script>
+  icon_targets = document.querySelectorAll(".form-check label");
+  icon_targets.forEach((element) => {
+    element.classList.add("icon-resting");
+    element.addEventListener("click", ()=>{
+      icon_targets.forEach(element =>
+         element.classList.remove('icon-active'));
+      element.classList.add('icon-active');
+    })
+  })
+</script>
