@@ -52,6 +52,7 @@ border-radius: 3px;
   font-size: 32px;
   color: #00AF7B;
   height: 8vh;
+  margin-bottom: 8vh;
 }
 
 .user_goal_goal_id {
@@ -70,16 +71,16 @@ width: 90vw;
  color:  #00af7b
 }
 
-
-.question {
-  color: #00AF7B;
+p{
+  width: 100%;
   text-align: center;
-  background-color: white;
-  box-shadow: 2px 3px rgba(100,100,100,0.3);
-  border-radius: 12px;
-  margin-top: 4vh;
+  font-size: 36px;
 }
 
+.salary-title{
+  margin-top: 17vh;
+  margin-bottom: -5vh;
+}
 
 .submit_btn {
   border-color: #CA3857;
