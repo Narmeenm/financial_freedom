@@ -38,7 +38,7 @@
     <ul>
     <h2>My Budgets</h2>
     <% @budgets.each do |budget| %>
-    <% category = Category.find(budget.category_id) %>
+      <% category = Category.find(budget.category_id) %>
           <li class="baige-big"><a href="#Home"><%= image_tag(category.photo) %></a></li>
     				<li><%= budget.amount_cents %></li>
     				<li><%= link_to 'Show', budget %></li>

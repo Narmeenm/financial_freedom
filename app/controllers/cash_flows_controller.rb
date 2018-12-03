@@ -3,7 +3,7 @@ class CashFlowsController < ApplicationController
       before_action :set_cashflow, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cash_flows = CashFlow.find(current_user.cash_flow_ids)  
+    @cash_flows = CashFlow.find(current_user.cash_flow_ids)
   # GET /budgets
   end
 
@@ -11,11 +11,15 @@ class CashFlowsController < ApplicationController
   	@cash_flow = CashFlow.find(params[:id])
   end
 
-  def new           # GET /budgets/new
-  	@cash_flow = CashFlow.new
-    @budgets = Budget.where(user_id: current_user.id)
-    @categories = []
-    @budgets.each { |budget| @categories.push(Category.find(budget.category_id))}
+  def new
+    if current_user.budgets.present?         # GET /budgets/new
+    	@cash_flow = CashFlow.new
+      @budgets = Budget.where(user_id: current_user.id)
+      @categories = []
+      @budgets.each { |budget| @categories.push(Category.find(budget.category_id))}
+    else
+      redirect_to controller: 'budgets', action: 'new'
+    end
 
   end
 
@@ -48,7 +52,7 @@ class CashFlowsController < ApplicationController
   def destroy
     @cash_flow.destroy
     redirect_to budget_cash_flows_path(@cash_flow.budget)
-  end	
+  end
 
 
 
