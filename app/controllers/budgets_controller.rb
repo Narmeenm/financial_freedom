@@ -10,7 +10,8 @@ class BudgetsController < ApplicationController
       end # GET /budgets
   end
 
-  def show         # GET /budgets/:id
+  def show
+  raise     # GET /budgets/:id
   	@budget = Budget.find(params[:id])
    @cash_flows = @budget.cash_flows
   end
@@ -24,7 +25,7 @@ class BudgetsController < ApplicationController
   def create        # POST /budgets
   	@budget = Budget.new(budget_params)
   	@budget.user = current_user
-    @budget.Budget_balance = 0 
+    @budget.Budget_balance = 0
     if @budget.save!
     	redirect_to budgets_path(@budget)
     else

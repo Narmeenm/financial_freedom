@@ -37,15 +37,30 @@
       </div>
   </div>
 <br>
-    <ul>
-    <h2>My Budgets</h2>
-    <% @budgets.each do |budget| %>
-      <% category = Category.find(budget.category_id) %>
-          <li class="baige-big"><a href="#Home"><%= image_tag(category.photo) %></a></li>
-    				<li><%= budget.amount_cents %></li>
-    				<li><%= link_to 'Show', budget %></li>
-    		     <li><%= link_to 'Edit', edit_budget_path(budget) %></li>
-    <% end %>
-    </ul>
+
+    <p>My Budgets</p>
+<div class="row dash-budgets">
+  <% @budgets.each do |budget| %>
+  <% @cash_flows = CashFlow.where(budget_id: budget.id)%>
+  <div class="button-listener">
+    <%= render 'components/budget_cards', budget: budget %>
+      <div class="dropdown-content hidden">
+        <%= render 'budgets/show', budget: budget, cash_flows: @cash_flows %>
+      </div>
+    </div>
+    <%end%>
 </div>
 
+<script>
+buttons = document.querySelectorAll('.button-listener');
+console.log(buttons);
+
+buttons.forEach((element)=> {
+ element.addEventListener("click", ()=> {
+ // console.log(element);
+ content =  element.querySelector('.dropdown-content');
+ content.classList.toggle('hidden');
+ });
+})
+
+</script>
