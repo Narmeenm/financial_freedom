@@ -1,75 +1,24 @@
-.budget-form {
-  color: white;
-  padding: 1vh 1vw ;
-  //margin: 1vh 4vw 1vh 4vw;
-  position: center;
-  margin-top: 0px;
-  //background-color: #11af7c;
-  }
-
-#new_user_goal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  //background-color: #11af7c;
-  padding: 2vh 2vw ;
-  //box-shadow: 2px 2px rgba(0,0,0,0.2);
-  // border-radius: 20px;
-
+#new_cash_flow{
+    background-color: #00af7b;
+    box-shadow: 2px 3px rgba(100, 100, 100, 0.3);
+    border-radius: 12px;
+    color: white;
+    height: 25vh;
+}
+.cash_flow_budget{
+    background-color: #00af7b;
+    box-shadow: 2px 3px rgba(100, 100, 100, 0.3);
+    border-radius: 12px;
+    color: white;
+    height: 48vh;
 }
 
-#budget_amount_cents {
-  width: 50vw;
+.cash_flow_budget  .form-check{
+  padding-top: 50px;
+  padding: 5px;
+  display: inline;
 }
 
-#budget_description {
-  height: 10vh;
-}
-
-.new_goal_wrap {
-  padding-left: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.user_goal_amount_cents {
-  padding: 3vh 3vw;
-  //background-color: #00af7b;
-  //box-shadow: 2px 3px rgba(100,100,100,0.3);
-  border-radius: 3px;
-}
-
-#user_goal_amount_cents {
-  border-color: #00AF7B;
-  font-size: 32px;
-  color: #00AF7B;
-  height: 8vh;
-}
-
-.col-form-label {
- color:  #00af7b
-}
-
-.add-goal-but {
-  width: 60vw;
-  height: 8vh;
-  border-radius: 25px;
-  background-color: white;
-  color: #FF5D00;
-  border-color: #FF5D00;
-  border: 4px solid;
-  font-size: 3vh;
-}
-
-.question {
-  color: #00AF7B;
-  text-align: center;
-  background-color: white;
-  box-shadow: 2px 3px rgba(100,100,100,0.3);
-  border-radius: 12px;
-  margin-top: 4vh;
-}
 
 .submit_btn {
   border-color: #CA3857;
