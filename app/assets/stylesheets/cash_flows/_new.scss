@@ -85,12 +85,15 @@
 .submit_btn {
   border-color: #CA3857;
   border-radius: 100px;
-  border-width: 3px;
+  border-width:5px;
   color: #CA3857;
   background-color: white;
-}
-
-.new_cash_flow{
   text-align: center;
+  font-size: 30px;
+}
+.submit_btn:hover{
+  box-shadow: none;
+  background-color: #CD3453;
+  color: #e5e3e3;
 }
 

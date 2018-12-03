@@ -1,7 +1,4 @@
-
-
-
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_path 'banner.jpg' %>);">
+<div class="banner col-xs-12" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(<%= image_path 'banner.jpg' %>);">
   <div class="banner-content">
     <h1>Welcome to</h1>
     <p><%= link_to root_path, class: "logo" do %>
@@ -11,8 +8,8 @@
     <a><%= link_to 'Sign up', new_user_registration_path, :class => "btn" %></a>
     <a><%= link_to 'Sign in',  new_user_session_path, :class => "btn"%></a>
     		<%  else  %>
-    <a><%= link_to 'Dashboard',  dashboard_path, :class => "btn"%></a>
+    <a><%= link_to 'Save Dat Cash',  dashboard_path, :class => "btn"%></a>
     <% end %>
   </div>
 </div
-	
+
