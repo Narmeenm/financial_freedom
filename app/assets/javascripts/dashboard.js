@@ -1,3 +1,5 @@
+
+
 $('.bar-percentage[data-percentage]').each(function () {
   var progress = $(this);
   var percentage = Math.ceil($(this).attr('data-percentage'));
@@ -11,3 +13,7 @@ $('.bar-percentage[data-percentage]').each(function () {
     }
   });
 });
+
+
+
+

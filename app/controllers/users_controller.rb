@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 	   @budgets = current_user.budgets
 	   @budgets = Budget.where(user_id: current_user.id)
 	   @user_goal = UserGoal.where({user_id: current_user.id})[0]
+	   @goal = Goal.find(@user_goal.goal_id)
 	end
 
 
