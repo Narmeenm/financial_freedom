@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 		@user.save
 
 	end
-	
+
 	def dashboard
 	   @budgets = current_user.budgets
 	   @budgets = Budget.where(user_id: current_user.id)

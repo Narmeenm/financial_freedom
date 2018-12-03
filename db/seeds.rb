@@ -173,7 +173,7 @@ Budget.create!(budget_attributes)
 zaneta_budgets = Budget.where(user_id: zaneta.id)
 zaneta_budgets.each do |budget|
   3.times do
-    CashFlow.create!(date: Date.today - rand(1..3), user: zaneta, budget: budget)
+    CashFlow.create!(date: Date.today - rand(1..3), price_cents: rand(1..999), user: zaneta, budget: budget)
   end
 end
 

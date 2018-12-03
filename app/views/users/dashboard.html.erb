@@ -39,10 +39,11 @@
     <p>My Budgets</p>
 <div class="row dash-budgets">
   <% @budgets.each do |budget| %>
+  <% @cash_flows = CashFlow.where(budget_id: budget.id)%>
   <div class="button-listener">
     <%= render 'components/budget_cards', budget: budget %>
       <div class="dropdown-content hidden">
-        <%= render 'budgets/show', budget: budget %>
+        <%= render 'budgets/show', budget: budget, cash_flows: @cash_flows %>
       </div>
     </div>
     <%end%>
