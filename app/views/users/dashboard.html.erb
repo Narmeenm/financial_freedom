@@ -3,7 +3,7 @@
     <%= image_tag(@user_goal.goal.image_goal) %>
 
     </div>
-    <!-- 
+    <!--
       <div class="col-xs-6 col-sm-6">
         <div class="card">
           <div class="card-category">Balance
@@ -15,7 +15,7 @@
         </div>
       </div> -->
 
-  
+
 
     <div id="bar-2" class="bar-main-container emerald">
       <div class="goal_name">
@@ -40,9 +40,9 @@
         </div> -->
 
 <div class="budget-title">
-  
+
     <p>My Budgets</p>
-  
+
 </div>
 <div class="row dash-budgets">
   <% @budgets.each do |budget| %>
@@ -56,17 +56,7 @@
     <%end%>
 </div>
 
-<script>
-  buttons = document.querySelectorAll('.button-listener');
-  //console.log(buttons);
-  buttons.forEach((element)=> {
-    element.addEventListener("click", ()=> {
-   // console.log(element);
-    content =  element.querySelector('.dropdown-content');
-    content.classList.toggle('hidden');
-   });
-  })
-</script>
+
 
 
 
