@@ -1,7 +1,10 @@
 import "bootstrap";
 import "../plugins/flatpickr"
 import Chartkick from "chartkick";
-window.Chartkick = Chartkick;
 import Chart from "chart.js";
-Chartkick.addAdapter(Chart);
+import { category_toggle } from "../components/category.js";
 
+
+window.Chartkick = Chartkick;
+Chartkick.addAdapter(Chart);
+category_toggle();
