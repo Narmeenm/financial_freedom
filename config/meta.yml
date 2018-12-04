@@ -1,0 +1,5 @@
+meta_product_name: "Budgetly"
+meta_title: "Budgetly - Learn To Budget"
+meta_description: "Budgetly helps you achieve your financial dreams faster. Monitor your spending habits and save more money every month. This app is not a book."
+meta_image: "icon2.png"                   # should exist in `app/assets/images/`
+  # required for Twitter Cards
