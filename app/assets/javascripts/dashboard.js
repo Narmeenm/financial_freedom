@@ -17,3 +17,4 @@ $('.bar-percentage[data-percentage]').each(function () {
 
 
 
+

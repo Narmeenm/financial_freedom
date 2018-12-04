@@ -1,7 +1,9 @@
 
-<div class="container main-dashboard">
-  <div class="row">
-    <%= pie_chart current_user.cash_flows.group(:budget).count%>
+    <div class="image_goal">
+    <%= image_tag(@user_goal.goal.image_goal) %>
+
+    </div>
+    <!-- 
       <div class="col-xs-6 col-sm-6">
         <div class="card">
           <div class="card-category">Balance
@@ -11,7 +13,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
+
+  
 
     <div id="bar-2" class="bar-main-container emerald">
       <div class="goal_name">
@@ -25,7 +29,7 @@
       </div>
     </div>
 
-      <div class="col-xs-6 col-sm-6">
+ <!--      <div class="col-xs-6 col-sm-6">
         <div class="card">
           <div class="card-category">the first goal</div>
             <div class="card-description">
@@ -33,12 +37,13 @@
               <p></p>
             </div>
           </div>
-        </div>
-      </div>
-  </div>
-<br>
+        </div> -->
 
+<div class="budget-title">
+  
     <p>My Budgets</p>
+  
+</div>
 <div class="row dash-budgets">
   <% @budgets.each do |budget| %>
   <% @cash_flows = CashFlow.where(budget_id: budget.id)%>
@@ -52,15 +57,16 @@
 </div>
 
 <script>
-buttons = document.querySelectorAll('.button-listener');
-console.log(buttons);
-
-buttons.forEach((element)=> {
- element.addEventListener("click", ()=> {
- // console.log(element);
- content =  element.querySelector('.dropdown-content');
- content.classList.toggle('hidden');
- });
-})
-
+  buttons = document.querySelectorAll('.button-listener');
+  //console.log(buttons);
+  buttons.forEach((element)=> {
+    element.addEventListener("click", ()=> {
+   // console.log(element);
+    content =  element.querySelector('.dropdown-content');
+    content.classList.toggle('hidden');
+   });
+  })
 </script>
+
+
+

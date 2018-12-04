@@ -1,8 +1,15 @@
 
 
-
-
-<h1>Expenses For <%=budget.name%></h1>
+<p class="title">Expenses For <%=budget.name%></p>
 <%@cash_flows.each do |c| %>
-<%= c.price_cents %>
+<ul>
+<li>$ <%= c.price_cents %> : <%= c.date %> </li>
+</ul>
 <%end%>
+
+
+
+
+
+
+
