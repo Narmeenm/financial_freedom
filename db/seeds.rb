@@ -101,63 +101,63 @@ budget_attributes = [
     name: "Healthy&Yummy!",
     description: "Cat ipsum dolor sit amet, burrow under covers so allways wanting food. Steal the warm chair right after you get up. Scratch the furniture make meme, make cute face for bathe private parts with tongue then lick owner's face pushes butt to face lick plastic bags fat baby cat best buddy little guy or love you, then bite you. That box?",
     user: zaneta,
-    amount: 500
+    amount: 200
   },
   {
     category_id: bills.id,
     name: "The worst category...",
     description: "That box? i can fit in that box i just saw other cats inside the house and nobody ask me before using my litter box instantly break out into full speed gallop across the house for no reason.",
     user: zaneta,
-    amount: 750
+    amount: 150
   },
   {
     category_id: pets.id,
     name: "Because I love them!",
     description: "Slap owner's face at 5am until human fills food dish pet me pet me pet me pet me, bite, scratch, why are you petting me, meow meow mama yet cats go for world domination plays league of legends fooled again thinking the dog likes me.",
     user: zaneta,
-    amount: 500
+    amount: 100
   },
   {
     category_id: shopping.id,
     name: "Stressed, depressed but well dressed!",
     description: "Eat and than sleep on your face mice so eat prawns daintily with a claw then lick paws clean wash down prawns with a lap of carnation milk then retire to the warmest spot on the couch to claw at the fabric before taking a catnap yet purr yet sit on human they not getting up ever yet hide at bottom of staircase to trip human.",
     user: zaneta,
-    amount: 500
+    amount: 100
   },
   {
     category_id: education.id,
     name: "The most important!",
     description: "Furrier and even more furrier hairball the fat cat sat on the mat bat away with paws but refuse to leave cardboard box or purr when being pet so i cry and cry and cry unless you pet me, and then maybe i cry just for fun",
     user: zaneta,
-    amount: 500
+    amount: 300
   },
   {
     category_id: going_out.id,
     name: "For fun!",
     description: "Scoot butt on the rug go into a room to decide you didn't want to be in there anyway find box",
     user: zaneta,
-    amount: 500
+    amount: 80
   },
   {
     category_id: home.id,
     name: "Let's make it beautiful",
     description: "a little too small and curl up with fur hanging out twitch tail in permanent irritation i like frogs and 0 gravity so small kitty warm kitty little balls of fur nap all day.",
     user: zaneta,
-    amount: 500
+    amount: 100
   },
   {
     category_id: transport.id,
     name: "Tube&bus",
     description: "Cats woo. Hit you unexpectedly instead of drinking water from the cat bowl, make sure to steal water from the toilet for going to catch the red dot today going to catch the red dot today for meowing non stop for food.",
     user: zaneta,
-    amount: 500
+    amount: 200
   },
   {
     category_id: others.id,
     name: "Some random things",
     description: "Mrow catty ipsum stare at guinea pigs yet woops poop hanging from butt must get rid run run around house drag poop",
     user: zaneta,
-    amount: 500
+    amount: 300
   }
 
 ]
@@ -173,7 +173,7 @@ Budget.create!(budget_attributes)
 zaneta_budgets = Budget.where(user_id: zaneta.id)
 zaneta_budgets.each do |budget|
   3.times do
-    CashFlow.create!(date: Date.today - rand(1..3), price_cents: rand(1..999), user: zaneta, budget: budget)
+    CashFlow.create!(date: Date.today - rand(1..3), price_cents: 100, user: zaneta, budget: budget)
   end
 end
 

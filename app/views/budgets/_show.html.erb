@@ -1,5 +1,7 @@
-S<%= budget.spent%>
-<br>
-R<%= budget.remaining %>
-<%= pie_chart({"Money Left" => "#{budget.remaining}", "Money Spent" => "#{budget.spent}"})%>
 
+<div class="chart-info">
+<p>You've already spent: $<%= budget.spent%></p>
+<br>
+<p>You still have: $<%= budget.remaining %></p>
+<%= pie_chart({"Money Left" => "#{budget.remaining}", "Money Spent" => "#{budget.spent}"})%>
+</div>

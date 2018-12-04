@@ -17,14 +17,7 @@ class UsersController < ApplicationController
 
 	def balance
 	    @budget = Budget.new
-		@user = current_user
-		@expense = 0
-		@user.cash_flow_ids.each do |cf|
-			@expense += CashFlow.find(cf).price_cents
-		end
-		@user.balance -= @expense
-		@user.save
-
+      @user = current_user
 	end
 
 	def dashboard
