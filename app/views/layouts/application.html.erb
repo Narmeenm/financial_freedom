@@ -23,6 +23,8 @@
   </div>
     <%end%>
     <%= render 'shared/flashes' %>
+    <%= javascript_pack_tag 'chart' %>
+
     <div class="yield-wrapper">
     <%= yield %>
         </div>
@@ -31,8 +33,7 @@
     <%= render 'shared/footer' %>
 
     <%end%>
-        <%= javascript_pack_tag 'application' %>
-
+    <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>

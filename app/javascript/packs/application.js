@@ -1,10 +1,12 @@
 import "bootstrap";
 import "../plugins/flatpickr"
-import Chartkick from "chartkick";
-import Chart from "chart.js";
+
 import { category_toggle } from "../components/category.js";
+// import { drawChart } from "../components/chart.js";
+// import { GoogleCharts } from "google-charts";
 
 
-window.Chartkick = Chartkick;
-Chartkick.addAdapter(Chart);
-category_toggle();
+
+ category_toggle();
+// GoogleCharts.load(drawChart);
+
