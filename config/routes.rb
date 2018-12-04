@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :budgets do
       resources :cash_flows , shallow: true
     end
-  root to: 'pages#home'
+  root to: 'users#balance'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/salary' ,to: 'users#salary'
   patch '/salary', to: "users#save_salary"
