@@ -5,4 +5,13 @@ class Budget < ApplicationRecord
 
   has_many :cash_flows ,dependent: :destroy
   #validates_uniqueness_of :category_id, scope: :category
+
+
+  def spent
+    self.cash_flows.sum(:price_cents)/100
+  end
+
+  def remaining
+    self.amount.to_i - self.spent
+  end
 end
