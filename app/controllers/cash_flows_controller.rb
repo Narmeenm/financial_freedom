@@ -39,7 +39,7 @@ class CashFlowsController < ApplicationController
     else
       @budgets = Budget.where(user_id: current_user.id)
     	render :new
-      flash[:alert] = 'error'
+      flash[:alert] = 'Expense have a date, category, and be within your set budget'
   	end
   end
 
