@@ -1,7 +1,15 @@
 
 <div class="chart-info">
-<p>You've already spent: $<%= budget.spent%></p>
+<p4>You've already spent: $<%= budget.spent%></p4>
 <br>
-<p>You still have: $<%= budget.remaining %></p>
-<%= pie_chart({"Money Left" => "#{budget.remaining}", "Money Spent" => "#{budget.spent}"})%>
+<p4>You still have: $<%= budget.remaining %></p4>
+<%= pie_chart(
+        {"Money Left" => "#{budget.remaining}", "Money Spent" => "#{budget.spent}"},
+        colors: ["#83a3a5", "#183287"],
+        donut: true,
+        prefix: "$",
+        legend: "bottom",
+
+
+        )%>
 </div>
