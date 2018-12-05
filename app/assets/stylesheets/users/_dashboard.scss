@@ -64,7 +64,7 @@ a {
     font-size: 0.8em;
     color: #FFF;
     width: 95vw;
-    height: 8vh;
+    height: 13vh;
     border-radius: 2vh;
     font-family: sans-serif;
     font-weight: normal;
@@ -111,14 +111,15 @@ a {
   -khtml-opacity: 1;
   opacity: 1;
 }
-.goal_name{
+.goal_namee{
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
-  font-size: 134%;
+  padding-bottom: 1vh;
   margin-bottom: 1%;
-
+  margin-left: 3vw;
+  font-size: 2vh;
 }
 
 .flex-card {
@@ -133,7 +134,10 @@ a {
 
 }
 
-.emerald { background: #11af7c; }
+.emerald { background: #11af7c;
+  height: 11vh;
+  padding: 2vh 2vw;
+}
 
 .icons-dash {
   border-radius: 5px;

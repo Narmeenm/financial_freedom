@@ -19,20 +19,22 @@
 }
 
 .submit_btn {
-  border-color: #CA3857;
-  border-radius: 100px;
-  border-width:5px;
-  color: #CA3857;
-  background-color: white;
+  border-color: #6772e5;
+  border-radius: 30px;
+  border-width: 5px;
+  color: white;
+  background-color: #6772e5;
+  text-color: white;
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
   margin: 25px 0;
 }
 
 .submit_btn:hover{
   box-shadow: none;
-  background-color: #CD3453;
-  color: #e5e3e3;
+  background-color: #6772e5;
+  opacity: 0.7;
+  color: white;
 }
 
 .cash_flow_budget_id {

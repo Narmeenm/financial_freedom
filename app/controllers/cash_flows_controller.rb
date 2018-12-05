@@ -32,10 +32,14 @@ class CashFlowsController < ApplicationController
     # @budget.Budget_balance += @cash_flow.price_cents
     current_user.balance -= @cash_flow.price_cents
     current_user.save!
-    if  @cash_flow.save!
+
+    if params[:cash_flow][:price_cents].to_i < @cash_flow.budget.remaining
+      @cash_flow.save!
     	redirect_to balance_path(@cash_flow.budget)
     else
+      @budgets = Budget.where(user_id: current_user.id)
     	render :new
+      flash[:alert] = 'Expense have a date, category, and be within your set budget'
   	end
   end
 
