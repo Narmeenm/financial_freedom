@@ -93,8 +93,8 @@ p{
 }
 
 .icon-active{
-  background-color: #CA3857;
-  padding: 1px;
+  box-shadow: 5px 2px 1px 0 rgba(10, 137, 140, 0.07), 0 7px 25px 0 rgba(4, 0, 0, 0.2);
+  // box-shadow: 5px 2px 1px 0 rgba(0,0,0,.07), 0 7px 25px 0 rgba(0,0,0,.2);
 }
 
 .icon-resting{

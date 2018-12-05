@@ -3,14 +3,13 @@
     box-shadow: 2px 3px rgba(100, 100, 100, 0.3);
     border-radius: 12px;
     color: white;
-    height: 25vh;
+    padding: 17px 0;
+
 }
 .cash_flow_budget{
     background-color: #00af7b;
-    box-shadow: 2px 3px rgba(100, 100, 100, 0.3);
     border-radius: 12px;
     color: white;
-    height: 48vh;
 }
 
 .cash_flow_budget  .form-check{
@@ -18,7 +17,6 @@
   padding: 5px;
   display: inline;
 }
-
 
 .submit_btn {
   border-color: #CA3857;
@@ -28,7 +26,9 @@
   background-color: white;
   text-align: center;
   font-size: 30px;
+  margin: 25px 0;
 }
+
 .submit_btn:hover{
   box-shadow: none;
   background-color: #CD3453;
@@ -39,8 +39,8 @@
   background-color: #00af7b
 }
 
-.icon-resting{
-  // margin-top: 6vh;
+.icon-resting
+{
   margin-left: 1vh;
   margin-right: 1vh;
 }
