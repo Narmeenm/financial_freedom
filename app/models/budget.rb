@@ -8,7 +8,7 @@ class Budget < ApplicationRecord
 
 
   def spent
-    self.cash_flows.sum(:price_cents)/100
+    self.cash_flows.sum(:price_cents)
   end
 
   def remaining

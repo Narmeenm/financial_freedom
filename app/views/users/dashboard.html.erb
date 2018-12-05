@@ -18,8 +18,8 @@
 
 
     <div id="bar-2" class="bar-main-container emerald">
-      <div class="goal_name">
-         <span>Til your <%= @goal.name %></span>
+      <div class="goal_namee">
+         <span>Saved toward your <%= @goal.name %></span>
       </div>
       <div class="wrap">
         <div class="bar-percentage" data-percentage= <%= (current_user.balance.to_f / @user_goal.amount_cents.to_f)* 100 %> ></div>
