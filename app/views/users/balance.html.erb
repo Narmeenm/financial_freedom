@@ -2,8 +2,12 @@
   <div class="savings">
     <div class="col-xs-12">
       <!-- insert <div class="card"> -->
-        <p id="title">How much do I have left?</p>
-        <p id="balance-amount">$<%= @user.balance  %></p>
+        <p id="title">Balance</p>
+        <% if @user.balance < 0 %>
+          <p id="balance-amount" class="negative-balance">$<%= @user.balance  %></p>
+        <% else %>
+          <p id="balance-amount" class="positive-balance">$<%= @user.balance  %></p>
+        <% end %>
     </div>
   </div>
   <div class="row">
@@ -14,7 +18,7 @@
       <% end %>
     </div>
     <div class="col-xs-6">
-      <p>Progress Report</p>
+      <p>Your Reports</p>
       <%= link_to dashboard_path do %>
         <i class="fas fa-chart-line"></i>
       <% end %>
