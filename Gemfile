@@ -20,6 +20,9 @@ gem 'money-rails'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem "chartkick"
 gem 'jquery-rails'
+gem 'giphy'
+gem 'GiphyClient'
+gem 'faraday'
 
 
 
