@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "narmeme.png", height: 40 %>
+    <%= image_tag "icon2.png", height: 40 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -14,17 +14,17 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "narmeme.png", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to new_budget_path do %>
-                <i class="fas fa-shopping-basket"></i> <%= t(".add_a_new_budget", default: "Add a new budget") %>
+                <%= t(".add_a_new_budget", default: "Add a new budget") %>
               <% end %>
             </li>
 
             <li>
               <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fas fa-sign-out-alt"></i>  <%= t(".sign_out", default: "Log out") %>
+                <%= t(".sign_out", default: "Log out") %>
               <% end %>
             </li>
           </ul>
