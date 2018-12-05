@@ -25,7 +25,7 @@ class UserGoalsController < ApplicationController
       redirect_to salary_path(@user_goal)
     else
       render :new
-      flash[:alert] = 'Error'
+      flash[:alert] = 'Please specify your goal and its price!'
     end
   end
 
