@@ -1,7 +1,8 @@
 
-    <div class="image_goal">
-    <%= image_tag(@user_goal.goal.image_goal) %>
 
+
+    <div class="image_goal">
+    <%= image_tag(@giphy_url.to_s) %>
     </div>
     <!--
       <div class="col-xs-6 col-sm-6">
@@ -19,10 +20,10 @@
 
     <div id="bar-2" class="bar-main-container emerald">
       <div class="goal_name">
-         <span>Til your <%= @goal.name %></span>
+         <span>saved towards your <%= @goal.name %></span>
       </div>
       <div class="wrap">
-        <div class="bar-percentage" data-percentage= <%= (current_user.balance.to_f / @user_goal.amount_cents.to_f)* 100 %> ></div>
+        <div class="bar-percentage" data-percentage= <%= @goal_percent + 1 %> ></div>
         <div class="bar-container">
           <div class="bar"></div>
         </div>
