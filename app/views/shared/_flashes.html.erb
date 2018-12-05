@@ -1,17 +1,22 @@
 <% if notice %>
-  <div class="alert alert-info alert-dismissible" role="alert" id="flash-alert">
+  <div class="alert alert-info alert-dismissible" role="alert" id="flash-notice">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= notice %>
     <script>
     	setTimeout(()=> {
-    		document.querySelector("#flash-alert").classList.add("disappear")
-    	}, 3000);
+    		document.querySelector("#flash-notice").classList.add("disappear")
+    	}, 1500);
     </script>
   </div>
 <% end %>
 <% if alert %>
-  <div class="alert alert-warning alert-dismissible" role="alert">
+  <div class="alert alert-warning alert-dismissible" role="alert" id='flash-alert'>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= alert %>
+    <script>
+      setTimeout(()=> {
+        document.querySelector("#flash-alert").classList.add("disappear")
+      }, 1500);
+    </script>
   </div>
 <% end %>

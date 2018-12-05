@@ -170,12 +170,12 @@ Budget.create!(budget_attributes)
 
 ## set cash flow seed info
 
-zaneta_budgets = Budget.where(user_id: zaneta.id)
-zaneta_budgets.each do |budget|
-  3.times do
-    CashFlow.create!(date: Date.today - rand(1..3), price_cents: 100, user: zaneta, budget: budget)
-  end
-end
+#zaneta_budgets = Budget.where(user_id: zaneta.id)
+#zaneta_budgets.each do |budget|
+ # 3.times do
+  #  CashFlow.create!(date: Date.today - rand(1..3), price_cents: 100, user: zaneta, budget: budget)
+ # end
+#end
 
 # User.all.each do |user|
 #  5.times do
