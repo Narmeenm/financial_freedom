@@ -1,15 +1,17 @@
 
 
 
-    <div class="xs-6 col-xs-offset-3 image_goal">
-    <%= image_tag(@giphy_url.to_s) %>
+
+    <div class="image_goal">
+    <%= image_tag(@giphy_url.to_s, size: "360x200" ) %>
+
     </div>
 
 
 
     <div id="bar-2" class="bar-main-container emerald">
       <div class="goal_name">
-         <span>saved towards your <%= @goal.name %></span>
+         <span>Saved towards your <%= @goal.name %></span>
       </div>
       <div class="wrap">
         <div class="bar-percentage" data-percentage= <%= @goal_percent + 1 %> ></div>

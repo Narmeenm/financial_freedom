@@ -35,21 +35,17 @@ class UsersController < ApplicationController
 def generate_giphy_url(goal_percent)
   @goal_percent = goal_percent
   #if goal_percent < 50% -- sad gif
-  if goal_percent < 20
-    @response = Giphy.random('poor')
+  if goal_percent < 30
+    @response = Giphy.random('where is my money')
     return @response.image_url
-  elsif goal_percent < 40 && goal_percent > 20
-    @response = Giphy.random('sad')
+
+  elsif goal_percent < 70 && goal_percent > 30
+    @response = Giphy.random('rich')
     return @response.image_url
-  elsif goal_percent < 60 && goal_percent > 40
-    @response = Giphy.random('try harder')
-    return @response.image_url
-  elsif goal_percent < 80 && goal_percent > 60
-    @response = Giphy.random('money')
-    return @response.image_url
+
   else
     #else happy gif
-    @response = Giphy.random('rich')
+    @response = Giphy.random('make it rain')
     return @response.image_url
   end
 end
